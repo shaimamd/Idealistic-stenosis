@@ -1,0 +1,52 @@
+
+#
+# nek parameter file
+#
+[GENERAL] 
+stopAt = numSteps #endTime
+#endTime = 30.0
+numSteps = 1000000
+
+
+dt = -5.0e-04
+timeStepper = bdf3
+variableDt = no
+targetCFL = 0.3
+
+writeControl = timeStep #runTime
+writeInterval = 10000
+
+dealiasing = yes
+filtering = hpfrt
+filterWeight = 10.0
+filterCutoffRatio = 0.9
+
+[PROBLEMTYPE]
+equation = incompNS
+stressFormulation = no
+variableProperties = no
+
+[PRESSURE]
+residualTol = 1e-7
+residualProj = yes
+
+[VELOCITY]
+residualTol = 1e-7
+residualProj = yes
+density = 1.0
+viscosity = -1000
+advection = yes
+
+#
+[_RUNPAR]               # Runtime parameter section for rprm module
+PARFWRITE            = no                     # Do we write runtime parameter file
+PARFNAME             = outparfile             # Runtime parameter file name for output (without .par)
+#
+[_MONITOR]              # Runtime parameter section for monitor module
+LOGLEVEL             = 4                      # Logging threshold for toolboxes
+WALLTIME             = 23:45                  # Simulation wall time
+
+[_PSTAT3D]                # Runtime paramere section for pstat module
+STS_NFILE            = 24                     # Number of stat files
+STS_STIME            = 0.100015E+02         # Statistics starting time
+STS_NSTEP            = 1 
