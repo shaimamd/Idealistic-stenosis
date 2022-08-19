@@ -205,8 +205,10 @@ for il in range(len(pwal)):
      else: 
         n=np.array([-data_pos[0]/rl,-data_pos[1]/rl,0])
         nc=np.dot(R,n)
-     S=np.matrix([[data_sts[78],data_sts[79],data_sts[80]],[data_sts[81],data_sts[82],data_sts[83]],[data_sts[84],data_sts[85],data_sts[86]]])
-     Sc=D = np.matmul(R, np.matmul(S,np.transpose(R)))
+     S=np.matrix([[data_sts[78]*2,data_sts[79]+data_sts[81],data_sts[80]+data_sts[84]],[data_sts[81]+data_sts[79],data_sts[82]*2,\
+     data_sts[83]+data_sts[85]],[data_sts[84]+data_sts[80],data_sts[85]+data_sts[83],data_sts[86]*2]])
+         
+     Sc=np.matmul(R, np.matmul(0.5*S,np.transpose(R)))
      tau=np.dot(Sc,np.transpose(nc))
      datastr = "{} {} {} {} {} {}\n".format(float(data_pos[0]), float((data_pos[1])),float(data_pos[2]), float((tau[0])), float((tau[1])),float((tau[2])))
      fptr_MD_2.writelines(datastr)
