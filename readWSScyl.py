@@ -1,5 +1,6 @@
  # Example script for reading int_fld data
 # Kept similar to pymech
+###Wall shear stress in cylindrical coordinate system
 import struct
 import numpy as np
 import math
