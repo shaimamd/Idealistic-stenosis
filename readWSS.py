@@ -203,9 +203,10 @@ for il in range(len(pwal)-1):
         ny=data_pos[1]/rl
      tx=0.5*mu*((data_sts[78]+data_sts[78])*nx+(data_sts[79]+data_sts[81])*ny)
      ty=0.5*mu*((data_sts[82]+data_sts[82])*ny+(data_sts[79]+data_sts[81])*nx)
+     tz=0.5*mu*((data_sts[80]+data_sts[84])*nx+(data_sts[83]+data_sts[85])*ny)
      data_T=[data_pos, tx, ty]
         
-     datastr = "{} {} {} {} {}\n".format(float(data_pos[0]), float((data_pos[1])),float(data_pos[2]), float((tx)), float((ty)))
+     datastr = "{} {} {} {} {} {}\n".format(float(data_pos[0]), float((data_pos[1])),float(data_pos[2]), float((tx)), float((ty),float((tz)))
      
      fptr_MD_2.writelines(datastr)
 fptr_MD_2.close()
