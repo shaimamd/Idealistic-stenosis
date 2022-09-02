@@ -184,7 +184,7 @@ if __name__ == "__main__":
     fname = 'int_fld'
     data = read_int_fld(fname)
 fptr_MD_2 = open("WSSdata.txt", "w")
-for il in range(len(pwal)-1):
+for il in range(len(pwal)):
 
      lptn = data.pset[pwal[il]-1]
      data_pos = getattr(lptn,'pos')
