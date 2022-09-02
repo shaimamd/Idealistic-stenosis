@@ -1,0 +1,14 @@
+1.Select only the walls of the main mesh
+2. Unwrapping can be done in two ways either using the calculator or programmable filter in paraview.
+3. Using calculator:
+4. Select Coordinate results and type the following code in the calculator entry space
+Note:The cylinder looks circle in X-Y coordinates and is extruded along the z axis.
+0*iHat+(atan(coordsY/coordsX)+(coordsX/abs(coordsX))*1.570796326)*(coordsX^2+coordsY^2)^(1/2)*jHat+coordsZ*kHat
+The mapping to a plane is done as follows:
+X= axis is zero , based on the number specified the plane gets translated
+Y= the points are mapped to the plane ,
+ first term represents finding the arclength using tan relation(s=R* \theta)
+ second part represents a way to solve the inconsistency that occurs when Y=90 degrees.
+ The same point has to be mapped to either -pi/2 or pi/2
+ if xaxis is +ve add pi/2 , if negative add -pi/2
+ Z=same as old.
